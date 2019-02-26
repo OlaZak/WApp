@@ -1,0 +1,41 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>Main_Controller</servlet-name>
+        <servlet-class>controller.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Rights_GetAll</servlet-name>
+        <servlet-class>controller.rights.RightsGetAll</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Rights_Create</servlet-name>
+        <servlet-class>controller.rights.RightsCreate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Rights_Delete</servlet-name>
+        <servlet-class>controller.rights.RightsDelete</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Main_Controller</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Rights_GetAll</servlet-name>
+        <url-pattern>/rightsGetAll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Rights_Create</servlet-name>
+        <url-pattern>/rightsCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Rights_Delete</servlet-name>
+        <url-pattern>/rightsDelete</url-pattern>
+    </servlet-mapping>
+</web-app>

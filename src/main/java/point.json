@@ -1,0 +1,9 @@
+PointOfSale{id=1,
+  addressId=1,
+  name='Comfy',
+  products=[Product{id=1,
+  pointId=1,
+  price=1200.0,
+  amount=1.0,
+  name='Apple',
+  description='Model XS'}]}

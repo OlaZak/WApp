@@ -1,12 +1,13 @@
 <%@ page import="model.Product" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: Оля
   Date: 21.02.2019
   Time: 01:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page  language="java" contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -22,7 +23,7 @@
 <div class="container">
     <div class="row">
         <ul class="thumbnails">
-<c:forEach items="products" var="product">
+<c:forEach items="${products}" var="product">
             <li class="span4">
                 <div class="thumbnail">
                     <img src="http://placehold.it/320x200" alt="ALT NAME">
@@ -36,6 +37,7 @@
 </c:forEach>
         </ul>
     </div>
+
 </div>
 </body>
 </html>

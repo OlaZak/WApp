@@ -1,58 +1,31 @@
 package model;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.util.Objects;
+import javax.persistence.*;
+import java.io.Serializable;
 
-public class Right {
-    private long id;
-    private String name;
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "rights")
+public class Right implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    private long rightId;
+    @Column
+    private String rightName;
 
-    @Override
-    public String toString() {
-        return "Right{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "roleId")
+    private Role role;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Right)) return false;
-        Right right = (Right) o;
-        return getId() == right.getId() &&
-                Objects.equals(getName(), right.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName());
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Right(String name) {
-        this.name = name;
-    }
-
-    public Right() {
-    }
-
-    public Right(long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Right(String rightName) {
+        this.rightName = rightName;
     }
 }
